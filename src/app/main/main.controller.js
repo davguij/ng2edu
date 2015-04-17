@@ -39,7 +39,7 @@ angular.module('ng2ed')
 		for (var i = linksArr.length - 1; i >= 0; i--) {
 			linksArr[i] = Embed.get(linksArr[i].originalUrl);
 		};
-		return linksArr;
+		return linksArr.reverse();
 	};
 
 	$http.get('angular2-education/README.md').then(
