@@ -1,0 +1,8 @@
+node_modules/
+bower_components/
+.sass-cache/
+.tmp/
+dist/
+
+*.sublime-project
+ng2edu.sublime-workspace
