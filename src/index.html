@@ -26,23 +26,24 @@
     <![endif]-->
 
     <div ng-controller="MainCtrl">
-      	<md-grid-list
-        md-cols-sm="1"
-        md-cols-md="2"
-        md-cols-gt-md="6"
-        md-row-height-gt-md="1:1" md-row-height="4:3"
-        ng-repeat="section in sections">
-			<md-grid-tile
-			md-rowspan="1"
-			md-colspan="2"
-			md-colspan-sm="1">
-				{{section.title}}
-			</md-grid-tile>
-			<md-grid-tile ng-repeat="link in section.links">
-				<md-grid-tile-header>{{link.title}}</md-grid-tile-header>
-				<md-grid-tile-footer>{{link.description}}</md-grid-tile-footer>
-			</md-grid-tile>
-      	</md-grid-list>
+    	<md-content layout-padding>
+			<div layout="row" layout-sm="column" layout-padding layout-wrap ng-repeat="section in sections">
+				<div flex="20" flex-md="50" flex-sm="100">
+					<h2>{{section.title}}</h2>
+				</div>
+				<div flex="20" flex-md="50" flex-sm="100" ng-repeat="link in section.links">
+					<h3>{{link.title}}</h3>
+          <md-button class="md-icon-button"
+                     href="{{link.url}}"
+                     aria-label="{{link.title}}"
+                     target="_blank"
+                     title="Launch {{link.title}} in new window">
+            <md-icon md-svg-icon="assets/images/launch.svg"></md-icon>
+          </md-button>
+					{{link.description}}
+				</div>
+			</div>
+		</md-content>
     </div>
     
 
