@@ -1,52 +1,36 @@
 <!doctype html>
-<html ng-app="ng2ed">
-  <head>
+<html ng-app="ng2edu">
+
+<head>
     <meta charset="utf-8">
     <title>ng2edu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
     <!-- run `gulp inject` to automatically populate bower styles dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
     <!-- inject:css -->
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
+
+<body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
+      <![endif]-->
     <div ng-controller="MainCtrl">
-    	<md-content layout-padding>
-			<div layout="row" layout-sm="column" layout-padding layout-wrap ng-repeat="section in sections">
-				<div flex="20" flex-md="50" flex-sm="100">
-					<h2>{{section.title}}</h2>
-				</div>
-				<div flex="20" flex-md="50" flex-sm="100" ng-repeat="link in section.links">
-					<h3>{{link.title}}</h3>
-          <md-button class="md-icon-button"
-                     href="{{link.url}}"
-                     aria-label="{{link.title}}"
-                     target="_blank"
-                     title="Launch {{link.title}} in new window">
-            <md-icon md-svg-icon="assets/images/launch.svg"></md-icon>
-          </md-button>
-					{{link.description}}
-				</div>
-			</div>
-		</md-content>
+                <div ng-repeat="section in sections">
+                        <p ui-sref="linklist">{{section.title}}</p>
+                </div>
+        <div ui-view flex></div>
+      </div>
     </div>
-    
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -56,23 +40,20 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-    -->
-    
+  -->
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
     <!-- inject:js -->
     <!-- js files will be automatically insert here -->
     <!-- endinject -->
-
     <!-- inject:partials -->
     <!-- angular templates will be automatically converted in js and inserted here -->
     <!-- endinject -->
     <!-- endbuild -->
+</body>
 
-  </body>
 </html>

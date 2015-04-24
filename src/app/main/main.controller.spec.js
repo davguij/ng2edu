@@ -3,7 +3,7 @@
 describe('controllers', function(){
   var scope;
 
-  beforeEach(module('ng2ed'));
+  beforeEach(module('ng2edu'));
 
   beforeEach(inject(function($rootScope) {
     scope = $rootScope.$new();

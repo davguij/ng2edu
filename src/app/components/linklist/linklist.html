@@ -1,0 +1,10 @@
+	<div ng-repeat="section in sections">
+			<h2>{{section.title}}</h2>
+		<div ng-repeat="link in section.links">
+			<h3>{{link.title}}</h3>
+  <button href="{{link.url}}" target="_blank" title="Launch {{link.title}} in new window">
+    <icon icon="assets/images/launch.svg"></icon>
+  </button>
+			{{link.description}}
+		</div>
+	</div>

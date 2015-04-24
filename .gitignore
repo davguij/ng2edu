@@ -6,3 +6,12 @@ dist/
 
 *.sublime-project
 ng2edu.sublime-workspace
+.idea/.name
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/workspace.xml
+.idea/libraries/ng2edu_node_modules.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/ng2edu.iml
+.idea/vcs.xml
